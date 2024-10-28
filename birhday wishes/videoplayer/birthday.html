@@ -1,0 +1,121 @@
+<html>
+<head>
+    <title>DiYu PlayEr</title>
+  
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>-->
+     <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="birthday.css">
+   
+
+</head>
+<body>
+    <div class="header">
+        <img alt="Logo" height="20" src="diyu.jpg" width="40"/>
+        <input placeholder="Search" type="text"/>
+        <div class="icons">
+            <i class="fas fa-video"></i>
+            <i class="fas fa-th"></i>
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </div>
+    <div class="main">
+       <div class="video-section">
+            <div class="video">
+                <video id="main-video" src="d2.mp4" width="800" height="400" controls></video>
+            </div>
+            <div class="video-info">
+                <h1 id="video-title">Hoyto Tomari Jonno</h1>
+                <div class="stats">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>95K views</span>
+                    <!--i class="fas fa-thumbs-down"></i-->
+                    <span></span>
+                </div>
+                <div class="actions">
+                    <button>SHARE</button>
+                    <button>SAVE</button>
+                   <button class="subscribe" id="subscribe-button">SUBSCRIBE TO MY HEART</button>
+
+                </div>
+            </div>
+      
+
+    </div><div>
+        <div class="sidebar">
+            <div class="up-next">Up Next</div>
+            <div class="autoplay">
+                <span>CLICK TO PLAY</span>
+                <div class="toggle"></div>
+            </div>
+            <ul class="video-list">
+                <li onclick="playVideo('hoyto.mp4', 'hoyto|Diya',)">
+                    <video src="hoyto.mp4"></video>
+                    <div class="info">
+                        <h3>hoyto</h3>
+                        <p>Diya</p>
+                    </div>
+                </li>
+                
+                <li onclick="playVideo('d4.mp4','Another Sky|Diya')">
+                    <video src="d4.mp4"></video>
+                    <div class="info">
+                        <h3>Another Sky</h3>
+                        <p>Diya</p>
+                    </div>
+                </li>
+                <li onclick="playVideo('d5.mp4','Hoyto Tomari Jonno|Diya')">
+                    <video src="d5.mp4"></video>
+                    <div class="info">
+                        <h3>Hoyto Tomari Jonno </h3>
+                        <p>Diya</p>
+                    </div>
+                </li>
+                <li onclick="playVideo('With You.mp4','With You|Diya')">
+                    <video src="With%20You.mp4"></video>
+                    <div class="info">
+                        <h3>With You</h3>
+                        <p>Diya </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+   <script>
+        function playVideo(videoUrl, videoTitle) {
+            var mainVideo = document.getElementById("main-video");
+            var titleElement = document.getElementById("video-title");
+
+            // Change the video source and play the video
+            mainVideo.src = videoUrl;
+            mainVideo.play();
+
+            // Update the video title
+            titleElement.textContent = videoTitle;
+        }
+       function changeVideo(title, likes, dislikes) {
+    // Update the video title
+    document.getElementById("video-title").innerText = title;
+    
+    // Update the likes and dislikes
+    document.getElementById("likes").innerText = likes;
+    document.getElementById("dislikes").innerText = dislikes;
+}
+       document.getElementById("subscribe-button").addEventListener("click", function() {
+    const button = this;
+
+    // Fade out effect
+    button.classList.add("fade");
+
+    // Change the text after the fade out animation ends
+    setTimeout(() => {
+        button.innerText = "Love you too";
+        button.classList.remove("fade");
+        button.classList.add("fade-in");
+    }, 500); // Match the timeout with the fade out duration
+});
+
+
+    </script>
+</body>
+</html>
